@@ -87,10 +87,11 @@
 
 		.back-back-popup {
 			border: 1px solid;
+			border-color: lightgrey;
 			float: right;
-			margin: -21px;
+			margin: -19px;
 			background-color: white;
-			border-radius: 19px;
+			border-radius: 50%;
 			position: relative;
 		}
 
@@ -251,7 +252,8 @@
 				<div class="modalconent">
 					<button class="btn back-back-popup" onClick="PopUp('hide')"><i class="fa fa-close"></i></button>
 					<a onClick="PopUp('hide')" href="https://speedmaxx.co.in/package.html" target="_blank"><img
-							class="popup-img img-fluid" src="images/package/WebImage.jpeg" alt="" style="border-radius: 15px;"></a>
+							class="popup-img img-fluid" src="images/package/WebImage.jpeg" alt=""
+							style="border-radius: 15px;"></a>
 
 					<a onClick="PopUp('hide')" href="https://speedmaxx.co.in/package.html" target="_blank"><img
 							class="popup-img-mobile img-fluid" src="images/package/MobileImage.jpeg" alt=""
@@ -1307,7 +1309,7 @@
 			myInput.focus()
 		})
 	</script>
-	<script>
+	<!-- <script>
 		function PopUp(hideOrshow) {
 			if (hideOrshow == 'hide') document.getElementById('ac-wrapper').style.display = "none";
 			else document.getElementById('ac-wrapper').removeAttribute('style');
@@ -1324,8 +1326,9 @@
 					console.log(is_modal_show);
 				}
 			}, 3000)
+			// PopUp('show')
 		}
-	</script>
+	</script> -->
 	<script>
 		function myFunction50() {
 			$(function () {
