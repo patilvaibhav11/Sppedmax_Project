@@ -45,6 +45,56 @@
 		}
 		</script>
 	<style>
+		/* Popup Styling */
+		#modal {
+			position: fixed;
+			font-family: Arial, Helvetica, sans-serif;
+			top: 0;
+			left: 0;
+			background: rgba(0, 0, 0, 0.8);
+			z-index: 99999;
+			height: 100%;
+			width: 100%;
+		}
+
+		.modalconent {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: #fff;
+			width: 80%;
+		}
+
+		.popup-img {
+			display: block !important;
+		}
+
+		.popup-img-mobile {
+			display: none !important;
+		}
+
+		@media (max-width: 650px) {
+			.popup-img-mobile {
+				display: block !important;
+			}
+
+			.popup-img {
+				display: none !important;
+			}
+		}
+
+		.back-back-popup {
+			border: 1px solid;
+			float: right;
+			margin: -21px;
+			background-color: white;
+			border-radius: 19px;
+			position: relative;
+		}
+
+		/* Popup Styling End*/
+
 		.content-column {
 			padding-bottom: 90px;
 		}
@@ -121,37 +171,6 @@
 			z-index: 1001;
 		}
 
-		#popup {
-			margin-left: -169px;
-			width: 1036px;
-			height: 502px;
-			background: #FFFFFF;
-			border: 0px solid #000;
-			border-radius: 25px;
-			-moz-border-radius: 25px;
-			-webkit-border-radius: 25px;
-			box-shadow: #64686e 0px 0px 3px 3px;
-			-moz-box-shadow: #64686e 0px 0px 3px 3px;
-			-webkit-box-shadow: #64686e 0px 0px 3px 3px;
-			position: relative;
-			top: 150px;
-			left: 375px;
-			flex-wrap: wrap;
-		}
-
-		.popup-img {
-			height: 502px;
-			border-radius: 24px;
-			width: 1036px;
-		}
-
-		.back-btn {
-			/* float: right; */
-			margin: 3px 0px 0px 992px;
-			position: absolute;
-
-		}
-
 		.months-sec {
 			font-size: 18px;
 			color: chocolate;
@@ -216,65 +235,27 @@
 			color: darkgray;
 		}
 
-		@media only screen and (max-width: 320px) {
-			.ResponsivePopup {
-				max-width: 308px !important;
-				max-height: 386px !important;
-			}
-
-			.back-btn {
-				margin: 3px 0px 0px 266px !important;
-				position: absolute !important;
-			}
-		}
-
-		@media (max-width: 360px) {
-			.ResponsivePopup {
-				top: -103px !important;
-				margin: 247px 0px 1px -363px !important;
-			}
-		}
-
-		@media only screen and (max-width: 479px) {
-			.ResponsivePopup {
-				margin-left: -326px !important;
-				width: 100% !important;
-			}
-		}
-
-		/* 
-		@media (max-width: 479px) {
-			.ResponsivePopup {}
-		}
-
-		@media (max-width: 768px) {
-			.ResponsivePopup {}
-		}
-
-		@media (max-width: 1920px) {
-			.ResponsivePopup {}
-		} */
-
 		.title-recharge {
 			color: #000;
 		}
 	</style>
-	<script>(function(w, d) { w.CollectId = "637db2934640ebe0301da877"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
+	<script>(function (w, d) { w.CollectId = "637db2934640ebe0301da877"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async = true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
 </head>
 
 <body>
 
 	<div class="page-wrapper">
 		<div id="ac-wrapper" style='display:none'>
-			<div id="popup" class="ResponsivePopup">
-				<button class="btn back-btn" onClick="PopUp('hide')"><i class="fa fa-close"></i></button>
-				<a onClick="PopUp('hide')" href="https://engeniuspark.com/landing_pages.php" target="_blank"><img
-						class="popup-img img-fluid" src="images/package/WebImage.jpeg" alt=""></a>
-				<!-- offer for mobile -->
-				<a onClick="PopUp('hide')" href="https://engeniuspark.com/landing_pages.php" target="_blank"><img
-						class="popup-img-mobile img-fluid" src="images/package/MobileImage.jpeg" alt=""
-						style="display:none"></a>
+			<div id="modal">
+				<div class="modalconent">
+					<button class="btn back-back-popup" onClick="PopUp('hide')"><i class="fa fa-close"></i></button>
+					<a onClick="PopUp('hide')" href="https://speedmaxx.co.in/package.html" target="_blank"><img
+							class="popup-img img-fluid" src="images/package/WebImage.jpeg" alt=""></a>
 
+					<a onClick="PopUp('hide')" href="https://speedmaxx.co.in/package.html" target="_blank"><img
+							class="popup-img-mobile img-fluid" src="images/package/MobileImage.jpeg" alt=""
+							style="display:none"></a>
+				</div>
 			</div>
 		</div>
 		<!-- Main Header-->
@@ -1090,22 +1071,24 @@
 				<!--Widgets Section-->
 				<div class="widgets-section">
 					<div class="row clearfix">
-						
+
 						<!-- Column -->
 						<div class="big-column col-lg-6 col-md-12 col-sm-6 col-12">
 							<div class="row clearfix">
-							
+
 								<!-- Footer Column -->
 								<div class="footer-column col-lg-6 col-md-6 col-sm-12">
 									<div class="footer-widget logo-widget">
 										<div class="logo">
 											<a href="index.html"><img src="images/logo.png" alt="" /></a>
 										</div>
-										
-										<p class="mt-3">Speedmaxx Digital Networks Pvt Ltd is a rapidly growing company offering more potential, more opportunity and more of everything you expect from an Internet technology company.</p>
+
+										<p class="mt-3">Speedmaxx Digital Networks Pvt Ltd is a rapidly growing company
+											offering more potential, more opportunity and more of everything you expect
+											from an Internet technology company.</p>
 									</div>
 								</div>
-								
+
 								<!-- Footer Column -->
 								<div class="footer-column col-lg-6 col-md-6 col-sm-12">
 									<div class="footer-widget links-widget">
@@ -1118,14 +1101,14 @@
 										</ul>
 									</div>
 								</div>
-								
+
 							</div>
 						</div>
-						
+
 						<!-- Column -->
 						<div class="big-column col-lg-6 col-md-12 col-sm-6 col-12">
 							<div class="row clearfix">
-								
+
 								<!-- Footer Column -->
 								<div class="footer-column col-lg-6 col-md-6 col-sm-12">
 									<div class="footer-widget links-widget">
@@ -1140,54 +1123,67 @@
 										</ul>
 									</div>
 								</div>
-								
+
 								<!-- Footer Column -->
 								<div class="footer-column col-lg-6 col-md-6 col-sm-12">
 									<div class="footer-widget logo-widget newsletter-widget">
 										<h5>Contact Us</h5>
 										<div class="call">
-											<p style="    text-transform: capitalize;"><span class="icon ti-location-pin"></span> Kankuri Road, Shivaji Nagar, Shirdi</p>
+											<p style="    text-transform: capitalize;"><span
+													class="icon ti-location-pin"></span> Kankuri Road, Shivaji Nagar,
+												Shirdi</p>
 											Call us directly
-											<a class="phone" href="tel:+91-8109092323"><span class="icon ti-mobile"></span> +91-81 09 09 23 23</a>
-											<a class="email" href="mailto:info@speedmaxx.in"><span class="icon ti-email"></span> info@speedmaxx.in</a>
-											
+											<a class="phone" href="tel:+91-8109092323"><span
+													class="icon ti-mobile"></span> +91-81 09 09 23 23</a>
+											<a class="email" href="mailto:info@speedmaxx.in"><span
+													class="icon ti-email"></span> info@speedmaxx.in</a>
+
 										</div>
-										
+
 									</div>
 								</div>
-								
+
 							</div>
 						</div>
-						
+
 					</div>
 				</div>
-				
+
 				<!-- Footer Bottom -->
 				<div class="footer-bottom">
 					<div class="auto-container">
 						<div class="bottom-inner">
 							<div class="row clearfix">
-								
+
 								<div class="col-lg-8 col-md-12 col-sm-12">
-									<div class="copyright">Copyright ©<script async="" src="#"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | Speedmaxx Digital Networks Pvt Ltd</div>
+									<div class="copyright">Copyright ©
+										<script async="" src="#"></script>
+										<script>document.write(new Date().getFullYear());</script> All rights reserved |
+										Speedmaxx Digital Networks Pvt Ltd
+									</div>
 								</div>
-								
+
 								<div class="col-lg-4 col-md-12 col-sm-12">
 									<ul class="social-nav">
-										<li><a href="https://www.facebook.com/speedmaxxdigitalnetwork/" target="_blank" class="icofont-facebook"></a></li>
-								<li><a href="https://twitter.com/SpeedMaxx2" target="_blank" class="icofont-twitter"></a></li>
-								
-								<li><a href="https://speedmaxx.co.in/" target="_blank" class="icofont-google-plus"></a></li>
-								<li><a href="https://www.linkedin.com/in/speedmaxx-digital-8353001a5/" target="_blank" class="icofont-linkedin"></a></li>
-								<li><a href="https://www.youtube.com/channel/UCnYt0GW4yRVG1aGvTA6cbuw" target="_blank" class="icofont-play-alt-1"></a></li>
+										<li><a href="https://www.facebook.com/speedmaxxdigitalnetwork/" target="_blank"
+												class="icofont-facebook"></a></li>
+										<li><a href="https://twitter.com/SpeedMaxx2" target="_blank"
+												class="icofont-twitter"></a></li>
+
+										<li><a href="https://speedmaxx.co.in/" target="_blank"
+												class="icofont-google-plus"></a></li>
+										<li><a href="https://www.linkedin.com/in/speedmaxx-digital-8353001a5/"
+												target="_blank" class="icofont-linkedin"></a></li>
+										<li><a href="https://www.youtube.com/channel/UCnYt0GW4yRVG1aGvTA6cbuw"
+												target="_blank" class="icofont-play-alt-1"></a></li>
 									</ul>
 								</div>
-								
+
 							</div>
 						</div>
-					</div>	
+					</div>
 				</div>
-				
+
 			</div>
 		</footer>
 
@@ -1326,7 +1322,7 @@
 				else {
 					console.log(is_modal_show);
 				}
-			}, 7000)
+			}, 3000)
 		}
 	</script>
 	<script>
